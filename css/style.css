@@ -1,8 +1,33 @@
 @import url("photographer.css");
 
+* {
+	font-family: "DM Sans", sans-serif;
+}
+:root {
+	--color-primary: #901c1c;
+	--color-secondary: #db8876;
+	--color-tertiary: #d3573c;
+	--color-dark: #000;
+	--color-dark-medium: #757575;
+	--color-dark-intense: #525252;
+	--color-light: #fff;
+	--color-light-medium: #fafafa;
+	--color-label: #312e2e;
+}
+
+#main {
+	width: 100%;
+	max-width: 1440px;
+	min-width: 320px;
+	/* padding: 0 50px; */
+	box-sizing: border-box;
+}
+
 body {
 	font-family: "DM Sans", sans-serif;
 	margin: 0;
+	padding: 0;
+	/* height: 100%; */
 }
 
 header {
@@ -10,24 +35,30 @@ header {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	height: 90px;
+	/* height: 90px; */
+	height: 5.5rem;
 }
 
 h1 {
 	color: #901c1c;
-	margin-right: 100px;
+	/* margin-right: 100px; */
+	margin-right: 6.25rem;
 }
 
 .logo {
-	height: 50px;
-	margin-left: 100px;
+	/*height: 50px;
+	margin-left: 100px;*/
+	height: 3.13rem;
+	margin-left: 6.25rem;
 }
 
 .photographer_section {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	gap: 70px;
-	margin-top: 100px;
+	/*gap: 70px;
+	margin-top: 100px;*/
+	gap: 4.375rem;
+	margin-top: 6.25rem;
 }
 
 .photographer_section article {
@@ -38,12 +69,57 @@ h1 {
 	flex-direction: column;
 }
 
+.photographer-link {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	text-align: center;
+	line-height: 0;
+}
 .photographer_section article h2 {
 	color: #d3573c;
-	font-size: 36px;
+	font-size: 2rem;
+	/* width: 500px; */
+	/* overflow-wrap: break-word; */
+	font-weight: 400;
+	line-height: 0;
 }
 
 .photographer_section article img {
-	height: 200px;
-	width: 200px;
+	/*height: 200px;
+	width: 200px;*/
+	height: 12.5rem;
+	width: 12.5rem;
+	background-color: lightgray;
+	border-radius: 50%;
+	object-fit: cover;
+	object-position: bottom center;
+	line-height: 0;
+}
+
+.photographer-placeResidence {
+	color: #901c1c;
+	text-align: center;
+	/* font-size: 13px; */
+	font-size: 0.82rem;
+	font-weight: 400;
+	line-height: 0;
+}
+.photographer-slogan {
+	color: #000;
+	text-align: center;
+	/* font-size: 10px; */
+	font-size: 0.625rem;
+	font-weight: 400;
+	line-height: 0;
+}
+.photographer-rate {
+	color: #757575;
+	text-align: center;
+	/* font-size: 9px; */
+	font-size: 0.563rem;
+	font-weight: 400;
+	line-height: 0;
 }
