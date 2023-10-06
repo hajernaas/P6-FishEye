@@ -12,31 +12,62 @@
 <body>
 
   <!-- lien vers la page d'accueil -->
-  <header>
-    <img src="assets/images/logo.png" class="logo" />
+  <header role="banner">
+    <a href="./index.html" aria-label="fisheye home page" class="home-link">
+      <img src="assets/images/logo.png" class="logo" alt="fisheye logo - Page d’accueil" />
+    </a>
   </header>
 
-  <main id="main">
+  <main id="main" aria-hidden="false">
     <!-- bouton contactez moi -->
     <div class="photograph-header">
-      <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+      <button class="contact_button" aria-label="Bouton contactez-moi">Contactez-moi</button>
     </div>
 
   </main>
+
+
+
+
+
+
+
+
+
+
   <!-- Modal de contact -->
   <div id="contact_modal">
-    <div class="modal">
+    <div class="modal" role="dialog" aria-hidden="true" aria-describedby="modalTitle">
+
       <header>
-        <h2>Contactez-moi</h2>
-        <img src="assets/icons/close.svg" onclick="closeModal()" />
+        <h2 id="modalTitle">Contactez-moi</h2>
+
+        <!-- <img src="assets/icons/close.svg" onclick="closeModal()" class="modal-close-btn" /> -->
+        <button class="modal-close-btn" aria-label="Bouton de fermeture du modal de contact">
+          <img src="assets/icons/close.svg" alt="Bouton de fermeture icon X" />
+        </button>
       </header>
+
+
       <!-- Formulaire -->
       <form>
         <div>
-          <label>Prénom</label>
-          <input />
+
+          <label for="prenom">Prénom </label>
+          <input type="text" name="prenom" id="prenom" required aria-required=true />
+
+          <label for="nom">Nom</label>
+          <input type="text" name="nom" id="nom" required aria-required=true />
+
+          <label for="email">Email </label>
+          <input type="email" name="email" id="email" required aria-required=true />
+
+          <label for="message"> Votre message </label>
+          <textarea name="message" id="message" cols="50" rows="5" required aria-required=true></textarea>
+
+
         </div>
-        <button class="contact_button">Envoyer</button>
+        <button class="contact_button" type="submit" aria-label="Envoyer formulaire">Envoyer</button>
       </form>
     </div>
   </div>

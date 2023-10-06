@@ -18,10 +18,12 @@ function photographerTemplate(data) {
 		// Création d'un élément link pour rediriger vers page du photographe
 		const link = document.createElement("a");
 		link.setAttribute("href", `photographer.html?id=${id}`);
+		link.setAttribute("aria-label", `lien vers le photographe ${name}`);
 		link.classList.add("photographer-link");
 		// Création d'un élément img pour la photo du photographe
 		const img = document.createElement("img");
 		img.setAttribute("src", picture);
+		img.setAttribute("alt", `photo de ${name}`);
 		//Création d'un élément h2 pour le nom du photographe
 		const h2 = document.createElement("h2");
 		h2.textContent = name;
