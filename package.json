@@ -1,0 +1,24 @@
+{
+	"name": "fisheye",
+	"version": "1.0.0",
+	"description": "projet6 _ création d'un site de accessible pour une plateforme de photographes ",
+	"main": "index.js",
+	"devDependencies": {
+		"eslint": "^8.51.0",
+		"eslint-config-prettier": "^9.0.0"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"lint": "eslint  scripts/**/*.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/hajernaas/P6-FishEye.git"
+	},
+	"author": "Naas Hajer",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/hajernaas/P6-FishEye/issues"
+	},
+	"homepage": "https://github.com/hajernaas/P6-FishEye#readme"
+}
