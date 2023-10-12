@@ -4,7 +4,7 @@ import { getPhotographersApiData } from "../api/Api.js";
 import MediasFactory from "../factories/MediasFactory.js";
 
 import Photographer from "../models/Photographer.js";
-//import infoPhotographer from "../templates/infoPhotographer.js";
+import infoPhotographer from "../templates/infoPhotographer.js";
 
 import { photographerTemplate } from "../templates/photographerTemplate.js";
 
@@ -39,7 +39,8 @@ async function displayData(photographer, mediaList) {
 	console.log("rrr", JSON.stringify(name));
 	console.log("rr", JSON.stringify(picture));
 	console.log("r", getUserCardDOM());
-	//infoPhotographer(SON.stringify(name), JSON.stringify(picture), getUserCardDOM());
+	// infoPhotographer(JSON.stringify(name), JSON.stringify(picture), getUserCardDOM());
+	infoPhotographer(JSON.stringify(name), JSON.stringify(picture), getUserCardDOM());
 
 	//Parcourir le tableau des photographes et créer une carte pour chacun
 

@@ -9,7 +9,6 @@ export function photographerTemplate(data) {
 	const { id, name, city, country, tagline, price, portrait } = data;
 
 	const picture = `assets/photographers/${portrait}`;
-	console.log("picture", picture);
 
 	function getUserCardDOM() {
 		console.log("appel getUserCardDOM ");
@@ -21,8 +20,8 @@ export function photographerTemplate(data) {
 		link.setAttribute("aria-label", `lien vers le photographe ${name}`);
 		link.classList.add("photographer-link");
 		// Création d'un élément img pour la photo du photographe
-		const div = document.createElement("div");
-		div.classList.add("containerImg");
+		const span = document.createElement("span");
+		span.classList.add("containerImg");
 		const img = document.createElement("img");
 		img.setAttribute("src", picture);
 		img.setAttribute("alt", `photo de ${name}`);
@@ -45,8 +44,8 @@ export function photographerTemplate(data) {
 		rate.textContent = `${price} € / jour`;
 
 		// On rattache toutes les infos du photographe à la balise article
-		div.appendChild(img);
-		link.appendChild(div);
+		span.appendChild(img);
+		link.appendChild(span);
 		link.appendChild(h2);
 		article.appendChild(link);
 		//article.appendChild(h2);
