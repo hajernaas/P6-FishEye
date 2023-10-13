@@ -1,7 +1,7 @@
-.main-photographer {
-	display: flex;
-	/* margin: 0 6rem; */
-}
+/*.main-photographer {
+	 display: flex; 
+	 margin: 0 6rem; 
+}*/
 
 #contact_modal {
 	display: none;
@@ -196,4 +196,38 @@ form input {
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
+}
+
+.medias {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	margin-top: 50px;
+
+	/*width: 100%;
+	padding: 0px;*/
+}
+
+.gallery {
+	display: grid;
+	/* grid-template-columns: repeat(auto-fill, 35rem); */
+
+	grid-template-columns: 1fr 1fr 1fr;
+	justify-content: space-between;
+	gap: 2em 1em;
+	padding: 2em 0;
+}
+
+.gallery-card {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 35rem;
+}
+
+.gallery-media {
+	width: 22rem;
+	height: 22rem;
+	-o-object-fit: cover;
+	object-fit: cover;
+	border-radius: 0.5rem;
 }
