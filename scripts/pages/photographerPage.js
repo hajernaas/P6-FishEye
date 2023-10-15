@@ -50,10 +50,14 @@ async function displayData(photographer, mediaList) {
 		const mediaModel = new MediaTemplate(media, photographer);
 		console.log("sss", mediaModel.getMediaCardDOM());
 		mediaModel.getMediaCardDOM();
+
 		//sectionMedia.appendChild(mediaModel.getMediaCardDOM());
 		//const mediaCardDOM = mediaModel.getMediaCardDOM();
 		mediaSection.append(mediaModel.getMediaCardDOM());
 	});
+
+	const photographerLikePrice = new MediaTemplate(mediaList, photographer);
+	photographerLikePrice.getFooterPhotographer();
 }
 
 async function init() {
