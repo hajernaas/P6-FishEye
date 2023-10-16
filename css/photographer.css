@@ -118,6 +118,26 @@ main {
 	margin-top: 30px;
 }
 
+button {
+	background-color: transparent;
+}
+button,
+a {
+	cursor: pointer;
+	outline: none;
+	border: none;
+}
+/*
+.btn {
+	font-size: clamp(1.8rem, 2vw, 2rem);
+	font-weight: bold;
+	color: var(--color-light);
+	padding: 15px;
+	height: 50px;
+	background-color: var(--color-primary);
+	border-radius: 5px;
+}*/
+
 .contact_button {
 	font-size: 1.25rem;
 	font-weight: bold;
@@ -238,23 +258,108 @@ form input {
 	position: relative;
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	/* grid-template-columns: 1fr 1fr 1fr; */
+	/* grid-template-columns: repeat(auto-fill, 35rem); */
 	gap: 30px 60px;
 }
 
 .gallery-card {
 	display: flex;
-	flex-flow: column nowrap;
-	width: 35rem;
+	/* flex-flow: column nowrap; */
+	flex-direction: column;
+	/* width: 35rem; */
+	gap: 10px;
 }
 
+.gallery-card a {
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.gallery-card a figure {
+	height: 260px;
+	transition: all 0.2s ease-in-out;
+}
 .gallery-media {
-	width: 22rem;
-	height: 22rem;
-	-o-object-fit: cover;
-	object-fit: cover;
+	/*width: 22rem;
+	height: 22rem;*/
+	/* object-fit: cover; */
 	border-radius: 0.5rem;
+	height: 100%;
+	width: 100%;
+	will-change: transform;
+}
+
+.gallery-card figcaption {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+}
+
+.gallery-card figcaption h2 {
+	font-weight: 100;
+	color: var(--color-primary);
+	font-size: 1.3rem;
+}
+
+.gallery-card figcaption div {
+	align-self: flex-start;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	color: var(--color-primary);
+	font-size: 1.3rem;
+}
+
+.btn-like {
+	border-radius: 5px;
+	padding: 0 1px;
+	font-size: 1.3rem;
+	color: var(--color-secondary);
+}
+
+.btn-like:focus-visible:not(:hover) {
+	outline: 2px solid var(--color-secondary);
 }
 
 .wished {
 	color: var(--color-primary);
+}
+
+.container-likes-price {
+	z-index: 1;
+	position: fixed;
+	bottom: 0;
+	right: 10%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	/*width: 35rem;
+	height: 10rem;*/
+	padding: 1em;
+	background: #db8876;
+	color: #000000;
+	border-radius: 0.5rem;
+	font-weight: 500;
+	font-size: 2rem;
+	width: 400px;
+	height: 89px;
+	gap: 20px;
+}
+
+aside {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+}
+
+.photographer_likes_count {
+	text-align: right;
+
+	font-size: 24px;
+
+	font-weight: 500;
+	margin-right: 0.5em;
 }
