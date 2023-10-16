@@ -7,14 +7,25 @@ import Photographer from "../models/Photographer.js";
 import infoPhotographer from "../templates/infoPhotographer.js";
 import MediaTemplate from "../templates/MediaTemplate.js";
 
+import WhishListCounter from "../wishlist/Counter.js";
+import WishlistSubject from "../wishlist/Subject.js";
+import likes from "../utils/likes.js";
+
 import { photographerTemplate } from "../templates/photographerTemplate.js";
 
 const params = new URL(document.location).searchParams;
 const photographerId = parseInt(params.get("id"));
 
+/*const wishList = new WishlistSubject();
+const WhishCounter = new WhishListCounter();
+const counterLikes = WhishCounter.upadateNbTotalLikes();
+console.log("jjjjj", counterLikes);
+wishList.subscribe(counterLikes);
+const like = new likes(wishList);*/
+
 console.log("fff", photographerId);
 
-export async function getPhotographersById() {
+export default async function getPhotographersById() {
 	const { media, photographers } = await getPhotographersApiData();
 
 	const photographer = photographers
@@ -64,6 +75,14 @@ async function init() {
 	const { photographer, mediasList } = await getPhotographersById();
 
 	displayData(photographer, mediasList);
+	const wishList = new WishlistSubject();
+	const WhishCounter = new WhishListCounter();
+	const counterLikes = WhishCounter.upadateNbTotalLikes();
+
+	console.log("jjjjj", counterLikes);
+	wishList.subscribe(WhishCounter);
+	const like = new likes(wishList);
+	like.handleSubmit();
 }
 
 init();

@@ -5,15 +5,11 @@ export default class MediaTemplate {
 	constructor(medias, photographer) {
 		this.photographer = photographer;
 		this.medias = medias;
-		const article = document.createElement("article");
-		article.classList.add("gallery-card");
 	}
 
 	getMediaCardDOM() {
-		//const mediaCard = document.querySelector(".main-medias");
-		//const sectionMedia = document.querySelector(".gallery");
-
-		//const contentMedia=this.medias instanceof Video ?``
+		const article = document.createElement("article");
+		article.classList.add("gallery-card");
 
 		if (this.medias instanceof Video) {
 			console.log(this.medias.video);
@@ -31,7 +27,7 @@ export default class MediaTemplate {
                 <h2>${this.medias.title}</h2>
                     <div role="group" aria-label="Like button and number of likes">
                         <span class="nbLike">${this.medias.likes}</span> 
-                        <button class="btn_like" type="button" aria-label="Like" data-id="${this.medias.id}">
+                        <button class="btn-like" type="button" aria-label="Like" data-id="${this.medias.id}">
                             <span class="fas fa-heart" aria-hidden="true"></span>
                         </button> 
                     </div>
@@ -53,7 +49,7 @@ export default class MediaTemplate {
                <h2>${this.medias.title}</h2>
                    <div role="group" aria-label="Like button and number of likes">
                        <span class="nbLike">${this.medias.likes}</span> 
-                       <button class="btn_like" type="button" aria-label="Like" data-id="${this.medias.id}">
+                       <button class="btn-like" type="button" aria-label="Like" data-id="${this.medias.id}">
                            <span class="fas fa-heart" aria-hidden="true"></span>
                        </button> 
                    </div>
@@ -65,19 +61,10 @@ export default class MediaTemplate {
 	}
 
 	getFooterPhotographer() {
-		const mediaLikeCount = document.querySelectorAll(".nbLike");
-		let totalMediaLikeCount = 0;
-
-		mediaLikeCount.forEach((like) => {
-			totalMediaLikeCount += Number(like.textContent);
-
-			console.log("rrr", Number(like.textContent));
-		});
-
 		const photographFooter = `
         <aside>
         <p class="photographer_Likes">
-            <span class="photographer_likes_count">${totalMediaLikeCount}</span>
+            <span class="photographer_likes_count" id="likes-count"></span>
             <span class="fas fa-heart" aria-hidden="true"></span>
         </p>
         <span>${this.photographer.price}€ / jour</span>
