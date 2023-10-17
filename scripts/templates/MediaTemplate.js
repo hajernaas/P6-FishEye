@@ -28,10 +28,14 @@ export default class MediaTemplate {
                     <div role="group" aria-label="Like button and number of likes">
                         <span class="nbLike">${this.medias.likes}</span> 
                         <button class="btn-like" type="button" aria-label="Like" data-id="${this.medias.id}">
-                        <i class="fas fa-heart" aria-hidden="true"></i>
+                        <i class="fa-solid fa-heart" aria-hidden="true"></i>
                         </button> 
                     </div>
             </figcaption>
+         
+        </div>
+
+
         `;
 		}
 
@@ -50,7 +54,7 @@ export default class MediaTemplate {
                    <div role="group" aria-label="Like button and number of likes">
                        <span class="nbLike">${this.medias.likes}</span> 
                        <button class="btn-like" type="button" aria-label="Like" data-id="${this.medias.id}">
-                           <i class="fas fa-heart" aria-hidden="true"></i>
+                           <i class="fa-solid fa-heart" aria-hidden="true"></i>
                           
                        </button> 
                    </div>
@@ -66,7 +70,7 @@ export default class MediaTemplate {
         <aside>
         <p class="photographer_Likes">
             <span class="photographer_likes_count" id="likes-count"></span>
-            <span class="fas fa-heart" aria-hidden="true"></span>
+            <span class="fa-solid fa-heart" aria-hidden="true"></span>
         </p>
         <span>${this.photographer.price}€ / jour</span>
        </aside>`;
