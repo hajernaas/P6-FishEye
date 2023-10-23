@@ -14,7 +14,7 @@
   <title>Fisheye</title>
 </head>
 
-<body>
+<body id="">
   <div class="page">
     <!-- lien vers la page d'accueil -->
     <header role="banner">
@@ -26,13 +26,14 @@
     <main id="main" class="main-photographer" aria-hidden="false">
       <!-- bouton contactez moi -->
       <div class="photograph-header">
-        <button class="contact_button" aria-label="Bouton contactez-moi">Contactez-moi</button>
+        <button class=" btn-open contact-button" aria-label="Bouton contactez-moi">Contactez-moi</button>
       </div>
       <div class="medias">
         <section class="gallery">
 
         </section>
       </div>
+
       <div class="container-likes-price">
 
       </div>
@@ -49,48 +50,96 @@
 
 
     <!-- Modal de contact -->
-    <div id="contact_modal">
-      <div class="modal" role="dialog" aria-hidden="true" aria-describedby="modalTitle">
+    <div class="contact-modal wrapper" aria-hidden=" true">
+      <div class="modal" aria-describedby="modalTitle" role="dialog">
+        <header class="Modal-Title-Contact">
+          <h2 id="modalTitle">Contactez-moi
 
-        <header>
-          <h2 id="modalTitle">Contactez-moi</h2>
-          <!-- <img src="assets/icons/close.svg" onclick="closeModal()" class="modal-close-btn" /> -->
-          <button class="modal-close-btn" aria-label="Bouton de fermeture du modal de contact">
-            <img src="assets/icons/close.svg" alt="Bouton de fermeture icon X" />
-          </button>
+            <!-- <img src="assets/icons/close.svg" onclick="closeModal()" class="modal-close-btn" /> -->
+            <button class="modal-close-btn" aria-label="Close contact form">
+              <img tabindex="0" src="assets/icons/close.svg" alt="Bouton de fermeture icon X" />
+            </button>
+            <p class="modal-name-photographer"></p>
+          </h2>
+
+
         </header>
-
-
-
-
-
         <!-- Formulaire -->
-        <form>
-          <div>
-
-            <label for="prenom">Prénom </label>
-            <input type="text" name="prenom" id="prenom" required aria-required=true />
-
-            <label for="nom">Nom</label>
-            <input type="text" name="nom" id="nom" required aria-required=true />
-
-            <label for="email">Email </label>
-            <input type="email" name="email" id="email" required aria-required=true />
-
-            <label for="message"> Votre message </label>
-            <textarea name="message" id="message" cols="80" rows="5" required aria-required=true></textarea>
-
-
+        <form novalidate class="formModal">
+          <div class="formData">
+            <label for="prenom" id="First-name">Prénom </label>
+            <input class="formField" aria-labelledby="First-name" type="text" name="firstName" id="firstName" required
+              aria-required="true" data-error="Veuillez entrer un prénom d'au moins 3 caractères ." />
+            <div id="errorfirstname" class="errormessage" role="alert">
+              <p id="errorfirstname1">Veuillez entrer un prénom d'au moins 2 caractères</p>
+            </div>
           </div>
-          <button class="contact_button" type="submit" aria-label="Envoyer formulaire">Envoyer</button>
+
+          <div class="formData">
+            <label for="nom" id="Last-name">Nom</label>
+            <input class="formField" aria-labelledby="Last-name" type="text" name="name" id="lastName" required
+              aria-required="true" data-error="Veuillez entrer un nom d'au moins 2 caractères" />
+            <div id="errorlastname" class="errormessage" role="alert">
+              <p id="errorlastname1">Veuillez entrer un nom d'au moins 2 caractères</p>
+            </div>
+          </div>
+
+          <div class="formData">
+            <label for="email" id="label-email">Email </label>
+            <input class="formField" aria-labelledby="label-email" type="email" name="email" id="email" required
+              aria-required=true data-error="Veuillez entrer une adresse email valide" />
+            <div id="erroremail" class="errormessage" role="alert">
+              <p id="erroremailmsg">Veuillez entrer une adresse email valide</p>
+            </div>
+          </div>
+
+
+          <div class="formData">
+            <label for="message" id="your-message"> Votre message </label>
+            <textarea class="formField" aria-labelledby="your-message" name="message" id="message" minlength="20"
+              maxlength="200" required aria-required="true"
+              data-error="Veuillez saisir un message entre 20 et 200 caractères">
+            </textarea>
+            <div id="errorMsgContact" class="errormessage" role="alert">
+              <p id="errormessagecontact">Veuillez saisir un message entre 20 et 200 caractères</p>
+            </div>
+          </div>
+
+
+          <button class=" btn-submit" type="submit" aria-label="send">Envoyer</button>
+          <!-- <input class=" btn-submit" type="button" aria-label="send" value="Envoyer"> -->
+          <!-- <input type="button" class="btn btn-primary col-12" value="envoyer"> -->
         </form>
       </div>
     </div>
+
+    <!-- Lightbox-->
+    <div class="lightbox-container wrapper" aria-hidden="true">
+      <div class="lightbox" aria-label="Media closeup view" role="dialog">
+
+        <button class="btn-close-lightbox btn-close" aria-label="Close dialog"></button>
+
+        <div role="link" class="controls controls-left" aria-label="Previous media">
+          <i aria-hidden="true" class="fa-solid fa-chevron-left"></i>
+          <p class="sr-only">Previous</p>
+        </div>
+
+        <div role="link" class="controls controls-right" aria-label="Next media">
+          <i aria-hidden="true" class="fa-solid fa-chevron-right"></i>
+          <p class="sr-only">Next</p>
+        </div>
+
+        <figure class="media-lightbox"></figure>
+
+      </div>
+    </div>
+
+
   </div>
 
 
   <script type="module" src="./scripts/pages/photographerPage.js"></script>
-  <script type="module" src="scripts/utils/contactForm.js"></script>
+  <script type="module" src="./scripts/utils/contactForm.js"></script>
 </body>
 
 </html>

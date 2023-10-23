@@ -37,6 +37,11 @@ a {
 	outline: none;
 }
 
+a:focus,
+img:focus {
+	border: 2px solid var(--color-tertiary);
+}
+
 img,
 video {
 	object-fit: cover;

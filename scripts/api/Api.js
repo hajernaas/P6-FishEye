@@ -1,4 +1,4 @@
-// Récupération des infos sur les photographes depuis le fichier JSON
+// Récupération des infos sur les photographes (identité + medias) depuis le fichier JSON
 
 export async function getPhotographersApiData() {
 	try {

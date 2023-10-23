@@ -1,3 +1,5 @@
+/*cette classe représentant un photographe*/
+
 export default class Photographer {
 	constructor(data) {
 		this.name = data.name;
