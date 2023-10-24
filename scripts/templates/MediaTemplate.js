@@ -28,7 +28,7 @@ export default class MediaTemplate {
                     <div role="group" aria-label="Like button and number of likes">
                         <span class="nbLike">${this.medias.likes}</span> 
                         <button class="btn-like" type="button" aria-label="Like" data-id="${this.medias.id}">
-                        <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                        <i class="fa-solid fa-heart" aria-hidden="true" aria-label="likes"></i>
                         </button> 
                     </div>
             </figcaption>
@@ -51,7 +51,7 @@ export default class MediaTemplate {
                    <div role="group" aria-label="Like button and number of likes">
                        <span class="nbLike">${this.medias.likes}</span> 
                        <button class="btn-like" type="button" aria-label="Like" data-id="${this.medias.id}">
-                           <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                           <i class="fa-solid fa-heart" aria-hidden="true" aria-label="likes"></i>
                           
                        </button> 
                    </div>

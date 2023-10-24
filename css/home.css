@@ -1,19 +1,8 @@
 #main {
-	/*width: 100%;
-	max-width: 1440px;
-	min-width: 320px;
-	box-sizing: border-box;*/
 	margin: 0 auto;
 }
 
 body {
-	/*padding: 0;
-
-	display: flex;
-
-	flex-direction: column;
-	max-width: 90rem;*/
-	/* width: 80%; */
 	margin: 0 auto;
 	padding: 30px 0px 20px;
 	max-width: 1400px;
@@ -34,23 +23,14 @@ header {
 
 h1 {
 	color: var(--color-primary);
-	/* margin-right: 100px; */
-	/* margin-right: -2.75rem; */
 	font-weight: 100;
 }
 
 .logo {
 	height: 2.5rem;
-	/* margin-left: -4.75rem; */
-	/*width: 200px;
-	height: 50px;*/
 }
 
 .photographer_section {
-	/*display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	gap: 4.375rem;
-	margin-top: 6.25rem;*/
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -60,12 +40,6 @@ h1 {
 }
 
 .photographer_section article {
-	/*justify-self: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;*/
-
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -80,7 +54,6 @@ h1 {
 	justify-content: center;
 	text-decoration: none;
 	text-align: center;
-	/* line-height: 0; */
 	cursor: pointer;
 }
 
@@ -92,37 +65,16 @@ h1 {
 .photographer_section article h2 {
 	color: var(--color-tertiary);
 	font-size: 1, 875rem;
-	/* font-size: 30px; */
 	font-weight: 400;
-	/*font-size: 2rem;
-	font-weight: 400;*/
-	/* line-height: 0; */
 }
 
 .photographer_section article .containerImg {
-	/* height: 200px; */
-	/* width: 200px; */
-	/* display: flex; */
-	/* margin: 0 auto; */
 	height: 12rem;
 	width: 12rem;
 	overflow: hidden;
 	margin-bottom: 1rem;
-	/* justify-content: center; */
-
 	border-radius: 50%;
-	/* object-fit: cover; */
-	/* cursor: pointer; */
-	/* scale: 1.5; */
-	/* object-position: bottom center; */
-	/* overflow-clip-margin: unset ; */
-
-	/* line-height: 0; */
 	background-color: lightgray;
-	/* filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15)); */
-
-	/* background-size: -34.731px / 57.605% 112.699%; */
-	/* background-position: -34.731px / 57.605% 112.699%; */
 }
 
 .containerImg img {
@@ -130,7 +82,6 @@ h1 {
 	height: 100%;
 	object-fit: cover;
 	object-position: center;
-	/* border-radius: 50%; */
 	scale: 1.2;
 }
 
@@ -138,26 +89,19 @@ h1 {
 	color: var(--color-primary);
 	text-align: center;
 	font-size: 0.82rem;
-	/*font-weight: 600;*/
-	/* font-size: 13px; */
 	font-weight: 400;
-	/* line-height: 0; */
 }
 .photographer-slogan {
 	color: var(--color-dark);
 	text-align: center;
 	font-size: 0.65rem;
-	/*font-weight: 500;*/
-	/* font-size: 10px; */
 	font-weight: 400;
-	/* line-height: 0; */
 }
+
 .photographer-rate {
 	color: var(--color-dark-medium);
 	text-align: center;
 	font-size: 0.6rem;
-	/*font-weight: 500;*/
 	font-size: 9px;
 	font-weight: 400;
-	/* line-height: 0; */
 }

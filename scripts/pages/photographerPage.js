@@ -13,7 +13,8 @@ import WhishListCounter from "../wishlist/Counter.js";
 import WishlistSubject from "../wishlist/Subject.js";
 import likes from "../utils/likes.js";
 
-//import showLightBox from "../utils/lightbox.js";
+import showLightBox from "../utils/lightbox.js";
+import SorterTemplate from "../templates/sorterTemplate.js";
 
 /*Retourner un objet params permettant d'accéder aux arguments décodés de la requête GET contenue dans l'URL pour 
 extraire le paramètre 'id' */
@@ -48,12 +49,17 @@ async function displayDataMediaPhotographer(photographer, mediaList) {
 	infoPhotographer(JSON.stringify(name), JSON.stringify(picture), getUserCardDOM());
 
 	//Parcourir le tableau de media et créer une carte pour chacun (image et video)
-	mediaList.forEach((media) => {
+	/*mediaList.forEach((media) => {
 		const mediaModel = new MediaTemplate(media, photographer);
 		console.log("sss", mediaModel.getMediaCardDOM());
 		mediaModel.getMediaCardDOM();
 		mediaSection.append(mediaModel.getMediaCardDOM());
-	});
+	});*/
+	console.log("tri par popularité");
+	const sorterBy = "popularity";
+	const sorterMedia = new SorterTemplate(mediaList, photographer);
+	sorterMedia.sorterMedias(sorterBy);
+	//sorterMedia.renderLightboxLikes(sorterBy);
 
 	// Afficher le tarif journalier de la photographe affiché et le nombre total de likes. */
 	const photographerLikePrice = new MediaTemplate(mediaList, photographer);
@@ -62,22 +68,10 @@ async function displayDataMediaPhotographer(photographer, mediaList) {
 
 async function initMediaPhotographer() {
 	const { photographer, mediasList } = await getPhotographersById();
-	//const MediasCard = new MediaTemplate(medias, photographer);
-
 	displayDataMediaPhotographer(photographer, mediasList);
-	//Appeler le constructeur de l'observable
-	const wishList = new WishlistSubject();
-	//Appeler le constructeur de l'observateur
-	const WhishCounter = new WhishListCounter();
-	//Récupérer le nombre total de likes
-	const counterLikes = WhishCounter.upadateNbTotalLikes();
-	//Abonnement de l'observateur
-	wishList.subscribe(WhishCounter);
-	// Appeler la méthode handleSubmit() qui permet de gérer le systéme de mise en envie
-	const like = new likes(wishList);
-	like.handleSubmit();
 
-	//showLightBox(MediasCard);
+	const Sorter = new SorterTemplate(mediasList, photographer);
+	Sorter.render();
 }
 
 //Appel de la fonction initMediaPhotographer() qui sert à faire l'affichage

@@ -1,13 +1,15 @@
-/*******************************************************
- * Ce fichier contient toutes les fonctions nécessaires
- * pour afficher et masquer la modal de contact
- ******************************************************* */
+/*******************************************************************
+ * Ce fichier contient toutes les fonctions nécessaires pour afficher
+ * et masquer un modal de contact accessible et  aussi de valider les champs de formulaire
+ ***************************************************************************/
+
+// Eléments DOM
 const modalCloseBtn = document.querySelector(".modal-close-btn");
 const modalOpenBtn = document.querySelector(".contact-button");
-const bodyPhotophrapher = document.getElementById("page-photographer");
 const mainWrapper = document.getElementById("main");
 const modal = document.querySelector(".contact-modal");
 
+//EventListener lié au bouton "contactez-moi"
 modalOpenBtn.addEventListener("click", displayModal);
 /* cette fonction  permet d'afficher le modal*/
 function displayModal() {
@@ -20,15 +22,15 @@ function displayModal() {
 	modalCloseBtn.focus();
 }
 
+//EventListener lié au bouton close "X"
 modalCloseBtn.addEventListener("click", closeModal);
-/* cette fonction  permet  de masquer le modal*/
+/* cette fonction permet  de masquer le modal*/
 function closeModal() {
 	console.log("close Modal");
-	// la modale est fermée et son contenu est caché des technologies  d'assistance, et celui de la page doit être visible.
+	// la modale est fermée et son contenu est caché  par les technologies d'assistance, et celui de la page doit être visible.
 	mainWrapper.setAttribute("aria-hidden", "false");
 	modal.setAttribute("aria-hidden", "true");
 	modal.style.display = "none";
-	//modalOpenBtn.focus();
 }
 
 //Fermer la modale avec la touche “échap”
@@ -38,49 +40,44 @@ document.addEventListener("keydown", (e) => {
 	}
 });
 
+//cette fonction permet de valider les champs de la formulaire
+//et de Retourner vrai si toutes les données sont valides, faux sinon.
 export function validationForm() {
+	//Récupération des élements DOM
 	const form = document.querySelector(".formModal");
 	const firstName = document.querySelector("#firstName");
 	const lastName = document.querySelector("#lastName");
-	console.log("lastname", lastName.value);
 	const email = document.querySelector("#email");
 	const message = document.querySelector("#message");
-
+	//Expressions Régulières
 	const LastFirstRegex = new RegExp("^[A-zÀ-ú -]{2,15}$");
 	const emailRegex = new RegExp("^[a-zA-Z0-9_. -]+@[a-zA-Z0-9_. -]+[.]{1}[a-zA-Z]{2,10}$");
 	const regexMessage = new RegExp("^[A-Za-z0-9]{20,200}$");
-	//const regexMessage = /^[A-Za-z0-9|\s]{20,200}$/;
 
 	/**cette fonction permet de tester si les champs inputs suivants (prénom, nom, email,message)
 	 * correspondent à un format bien déterminé.Elle retourne 'true' si l'entrée est correcte
-	 * si non elle retourne false avec un message d'erreur qui doit s'afficher sous le champ associé
+	 * si non elle retourne false avec un message d'erreur qui doit s'afficher sous le champ
+	 * associé en prenant en compte l'accessibilité
 	 */
 
 	function RegexInputs(input, regex, errorMsg, errorClass) {
-		//let error = false;
 		//fonction trim () permet de retirer les blancs en début et fin de chaîne
 		const value = input.value.trim();
-		//let valueLength = input.value.length;
-		console.log("value", value);
 		if (regex.test(value)) {
-			console.log("test vrai");
 			errorClass.classList.add("errormessage");
-			//errorClass.style.display = "none";
 			input.setAttribute("aria-invalid", "false");
 			input.setAttribute("aria-describedby", "");
 			return true;
 		} else {
-			console.log("test faux");
 			errorClass.classList.remove("errormessage");
-			//msgError.setAttribute("data-error-visible", "true");
-			//errorClass.style.display = "block";
 			input.setAttribute("aria-invalid", "true");
 			input.setAttribute("aria-describedby", errorMsg);
-
 			return false;
 		}
 	}
 
+	//Écouter un événement "change" avec addEventListener sur les champs inputs
+	// Et appeler la fonction RegexInputs pour la vérification
 	const errrorMsgFirstName = document.getElementById("errorfirstname");
 	firstName.addEventListener("change", () => {
 		RegexInputs(firstName, LastFirstRegex, "errorFirstName", errrorMsgFirstName);
@@ -101,6 +98,7 @@ export function validationForm() {
 		RegexInputs(message, regexMessage, "errorMessageContact", errrorMessage);
 	});
 
+	//validation du formulaire et Gestion de l'événement submit pour valider le formulaire
 	form.addEventListener("submit", (event) => {
 		event.preventDefault();
 		let isvalid;
@@ -116,7 +114,6 @@ export function validationForm() {
 			console.log("Email:", email.value);
 			console.log("Message:", message.value);
 			closeModal();
-			//openMsg();
 			form.reset();
 		}
 	});
