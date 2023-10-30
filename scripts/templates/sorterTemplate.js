@@ -86,13 +86,12 @@ export default class SorterTemplate {
 		const sorterForm = `
             <form action="#" class="sorter-form">
                 <label for="sorter-select" class="Title-select">Trier par : </label>
-				<select name="select-sorter" id="sorter-select" aria-label="Sort Menu">
-				<ul dropdown_content curtain_effect>
-				<li> <option  class="option-select" value="popularity">Popularité</option></li>
-				<li><option class="option-select" value="date">Date</option></li>
-				<li><option class="option-select" value="title">Titre</option></li>
-				</ul>
-			    </select>
+				<select  class="sort-menu " name="select-sorter" id="sorter-select" aria-label="Sort Menu">
+				<option  class="option-select" value="popularity">Popularité</option>
+				<option class="option-select" value="date">Date</option>
+				<option class="option-select" value="title">Titre</option>
+				</select>
+				
             </form>
         `;
 		// <option value="">Aucun tri</option>
