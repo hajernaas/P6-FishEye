@@ -18,7 +18,7 @@ export default class MediaTemplate {
 			article.innerHTML = `   
             <a href="#" data-media=${this.medias.id} role="link" aria-label="View video" class="media-card">
                 <figure>
-                <video class="gallery-media">
+                <video class="gallery-media" title="${this.medias.title}">
                 <source src="./assets/images/${this.photographer.name}/${this.medias.video}" type="video/mp4">
                 </video> 
                 </figure>

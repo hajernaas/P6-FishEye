@@ -26,15 +26,11 @@
 body {
 	font-family: "DM Sans", sans-serif;
 }
+
 header a {
 	position: relative;
 	border-radius: 5px;
-	padding: 5px;
-}
-
-a {
-	text-decoration: none;
-	outline: none;
+	padding: 20px;
 }
 
 a:focus,
