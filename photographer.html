@@ -7,26 +7,24 @@
   <link rel="icon" type="image/png" href="./assets/favicon.png">
   <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/af057d8543.js" crossorigin="anonymous"></script>
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
-  <link href="css/photographer.css" rel="stylesheet" type="text/css" />
-
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="css/photographer.css" rel="stylesheet" type="text/css">
   <title>Fisheye</title>
 </head>
 
 <body>
   <div class="page">
     <!-- lien vers la page d'accueil -->
-    <header role="banner">
+    <header role="banner" class="header-photographer" aria-hidden="false">
       <a href="./index.html" aria-label="fisheye home page" class="home-link">
-        <img src="assets/images/logo.png" class="logo" alt="fisheye logo - Page d’accueil" />
+        <img src="assets/images/logo.png" class="logo" alt="fisheye logo">
       </a>
     </header>
 
     <main id="main" class="main-photographer" aria-hidden="false">
       <!-- bouton contactez moi -->
       <div class="photograph-header">
-        <button class=" btn-open contact-button" aria-label="Bouton contactez-moi">Contactez-moi</button>
+        <button class=" btn-open contact-button" aria-label="Contact Me">Contactez-moi</button>
       </div>
 
       <div class="form-wrapper">
@@ -34,9 +32,9 @@
       </div>
 
       <div class="medias">
-        <section class="gallery">
+        <div class="gallery">
 
-        </section>
+        </div>
       </div>
 
       <div class="container-likes-price">
@@ -45,31 +43,31 @@
 
     </main>
     <!-- Modal de contact -->
-    <div class="contact-modal wrapper" aria-hidden=" true">
+    <div class="contact-modal wrapper" aria-hidden="true" tabindex="0">
       <div class="modal" aria-describedby="modalTitle" role="dialog">
         <header class="Modal-Title-Contact">
           <h2 id="modalTitle">Contactez-moi
             <button class="modal-close-btn" aria-label="Close contact form">
-              <img tabindex="0" src="assets/icons/close.svg" alt="Bouton de fermeture icon X" />
+              <img src="assets/icons/close.svg" alt="Close dialog">
             </button>
-            <p class="modal-name-photographer"></p>
+            <span class="modal-name-photographer"></span>
           </h2>
         </header>
         <!-- Formulaire -->
         <form novalidate class="formModal">
           <div class="formData">
-            <label for="prenom" id="First-name">Prénom </label>
-            <input class="formField" aria-labelledby="First-name" name="firstName" id="firstName" required
-              aria-required="true" data-error="Veuillez entrer un prénom d'au moins 3 caractères ." />
+            <label for="firstName" id="First-name">Prénom </label>
+            <input type="text" name="firstName" id="firstName" aria-labelledby="First-name" required
+              aria-required="true" class="formField">
             <div id="errorfirstname" class="errormessage" role="alert">
               <p id="errorfirstname1">Veuillez entrer un prénom d'au moins 2 caractères</p>
             </div>
           </div>
 
           <div class="formData">
-            <label for="nom" id="Last-name">Nom</label>
-            <input class="formField" aria-labelledby="Last-name" name="name" id="lastName" required aria-required="true"
-              data-error="Veuillez entrer un nom d'au moins 2 caractères" />
+            <label for="lastName" id="Last-name"> Nom </label>
+            <input type="text" name="name" id="lastName" aria-labelledby="Last-name" required aria-required="true"
+              class="formField">
             <div id="errorlastname" class="errormessage" role="alert">
               <p id="errorlastname1">Veuillez entrer un nom d'au moins 2 caractères</p>
             </div>
@@ -78,7 +76,7 @@
           <div class="formData">
             <label for="email" id="label-email">Email </label>
             <input class="formField" aria-labelledby="label-email" type="email" name="email" id="email" required
-              aria-required=true data-error="Veuillez entrer une adresse email valide" />
+              aria-required=true>
             <div id="erroremail" class="errormessage" role="alert">
               <p id="erroremailmsg">Veuillez entrer une adresse email valide</p>
             </div>
@@ -86,8 +84,7 @@
           <div class="formData">
             <label for="message" id="your-message"> Votre message </label>
             <textarea class="formField" aria-labelledby="your-message" name="message" id="message" minlength="20"
-              maxlength="200" required aria-required="true"
-              data-error="Veuillez saisir un message entre 20 et 200 caractères">
+              maxlength="200" required aria-required="true">
             </textarea>
             <div id="errorMsgContact" class="errormessage" role="alert">
               <p id="errormessagecontact">Veuillez saisir un message entre 20 et 200 caractères</p>
@@ -108,15 +105,15 @@
           <span aria-hidden="true" class="fa-solid fa-xmark btn-close"></span>
         </button>
 
-        <div role="link" class="controls controls-left" aria-label="Previous media">
-          <span aria-hidden="true" class="fa-solid fa-chevron-left"></span>
-          <p class="sr-only">Previous</p>
-        </div>
+        <button class="controls controls-left" aria-label="Previous media">
+          <span role="link" aria-hidden="true" class="fa-solid fa-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </button>
 
-        <div role="link" class="controls controls-right" aria-label="Next media">
-          <span aria-hidden="true" class="fa-solid fa-chevron-right"></span>
-          <p class="sr-only">Next</p>
-        </div>
+        <button class="controls controls-right" aria-label="Next media">
+          <span role="link" aria-hidden="true" class="fa-solid fa-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </button>
 
         <figure class="media-lightbox"></figure>
 

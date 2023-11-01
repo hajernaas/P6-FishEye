@@ -2,7 +2,6 @@ import ProxyRatingSorter from "../proxy/ProxyRatingSorter.js";
 import MediaTemplate from "../templates/MediaTemplate.js";
 import likes from "../utils/likes.js";
 import showLightBox from "../utils/lightbox.js";
-
 import WhishListCounter from "../wishlist/Counter.js";
 import WishlistSubject from "../wishlist/Subject.js";
 
@@ -19,52 +18,33 @@ export default class SorterTemplate {
 		this.mediasWrapper = document.querySelector(".gallery");
 		// Instanciation de l’objet ProxyRatingSorter
 		this.ProxyRatingSorter = new ProxyRatingSorter();
-		let TemplateMedia;
 	}
 
 	// cette méthode permet d'appeler ProxyRatingSorter qui permet de récupérer le critére de tri et les medias triés
 	async sorterMedias(sorter) {
 		this.clearMediasWrapper();
-		//if (!!sorter) {
 		const sortedData = await this.ProxyRatingSorter.sorter(this.Medias, sorter);
-		console.log("sortedData", sortedData);
 		//Récupérer les medias triés
 		const SortedMedias = sortedData.data;
-		console.log("SortedMedias", SortedMedias);
 		// Afficher les médias triés dans la section gallery
 		SortedMedias.forEach((media) => {
 			const TemplateMediaSorter = new MediaTemplate(media, this.photographer);
 			console.log("templateMedia", TemplateMediaSorter);
 			this.mediasWrapper.appendChild(TemplateMediaSorter.getMediaCardDOM());
-			const TemplateMedia = TemplateMediaSorter;
-
-			//return TemplateMediaSorter;
-			//showLightBox(TemplateMedia);
 		});
 
 		const TemplateMediaSorter = new MediaTemplate(SortedMedias, this.photographer);
-		console.log("TemplateMediaSorter", TemplateMediaSorter);
 		showLightBox(TemplateMediaSorter);
 		const wishList = new WishlistSubject();
 		//Appeler le constructeur de l'observateur
 		const WhishCounter = new WhishListCounter();
 		//Récupérer le nombre total de likes
-		const counterLikes = WhishCounter.upadateNbTotalLikes();
+		WhishCounter.upadateNbTotalLikes();
 		//Abonnement de l'observateur
 		wishList.subscribe(WhishCounter);
+		//Afficher et gérer les likes
 		const like = new likes(wishList);
 		like.handleSubmit();
-
-		//return TemplateMediaSorter;
-
-		//console.log("TemplateMediaSorter", TemplateMediaSorter);
-
-		/*} else {
-			this.medias.forEach((media) => {
-				const Template = new MediaTemplate(media, this.photographer);
-				this.mediasWrapper.appendChild(Template.getMediaCardDOM());
-			});
-		}*/
 	}
 
 	//Écouter un événement "change" avec addEventListener sur le formulaire de tri

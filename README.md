@@ -47,7 +47,7 @@ Page de Photographe :
 
 - [AChecker](https://achecker.ca/)- Évaluation de l'accessibilité du site Web.
 - [ESLint] - Utilisé (avec les paramètres par défaut) pour garantir que le code est robuste.
-- Utilisation de [un lecteur d'écran gratuit ] pour faire une idée de ce que représente  
+- Utilisation de [Narrateur ] pour faire une idée de ce que représente  
   l'utilisation du site pour une personne malvoyante.
 - [W3C Validator](https://validator.w3.org/)
 

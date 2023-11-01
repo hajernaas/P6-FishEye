@@ -5,6 +5,7 @@ export default class WhishListCounter {
 		this.count = 0;
 		this.wishCount = document.querySelector(".photographer-likes-count");
 	}
+
 	/* cette fonction permet de modifier le compteur d'envies*/
 	update(action) {
 		if (action === "INC") {
@@ -25,14 +26,10 @@ export default class WhishListCounter {
 
 		mediaLikeCount.forEach((like) => {
 			totalMediaLikeCount += Number(like.textContent);
-			console.log("eee", totalMediaLikeCount);
-
-			console.log("rrr", Number(like.textContent));
 		});
 
 		this.count = totalMediaLikeCount;
 
-		console.log("ope", this.count);
 		this.wishCount.innerHTML = this.count;
 		return this.count;
 	}

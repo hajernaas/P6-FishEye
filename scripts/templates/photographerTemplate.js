@@ -5,13 +5,9 @@
  ****************************************************** */
 
 export function photographerTemplate(data) {
-	console.log("appel photographerTemplate");
 	const { id, name, city, country, tagline, price, portrait } = data;
-
 	const picture = `assets/photographers/${portrait}`;
-
 	function getUserCardDOM() {
-		console.log("appel getUserCardDOM ");
 		// Récupération de l'élément du DOM qui accueillera lesphotographes
 		const article = document.createElement("article");
 		// Création d'un élément link pour rediriger vers page du photographe
@@ -38,7 +34,6 @@ export function photographerTemplate(data) {
 		slogan.textContent = tagline;
 
 		//Création d'un élément p contenant le prix d'une journée de travail
-
 		const rate = document.createElement("p");
 		rate.classList.add("photographer-rate");
 		rate.textContent = `${price} € / jour`;
@@ -48,7 +43,6 @@ export function photographerTemplate(data) {
 		link.appendChild(span);
 		link.appendChild(h2);
 		article.appendChild(link);
-		//article.appendChild(h2);
 		article.appendChild(placeResidence);
 		article.appendChild(slogan);
 		article.appendChild(rate);

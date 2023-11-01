@@ -14,7 +14,6 @@ export default class MediaTemplate {
 		article.classList.add("gallery-card");
 		// cas vidéo
 		if (this.medias instanceof Video) {
-			console.log(this.medias.video);
 			article.innerHTML = `   
             <a href="#" data-media=${this.medias.id} role="link" aria-label="View video" class="media-card">
                 <figure>
@@ -38,9 +37,7 @@ export default class MediaTemplate {
 		}
 		// cas image
 		if (this.medias instanceof Image) {
-			console.log(this.medias.image);
 			article.innerHTML = `    
-       
            <a href="#" data-media=${this.medias.id} role="link" aria-label="View image" class="media-card">
                <figure>
                <img class="gallery-media" src="./assets/images/${this.photographer.name}/${this.medias.image}"  alt="${this.medias.title}" >

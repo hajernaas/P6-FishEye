@@ -12,7 +12,6 @@ export default function infoPhotographer(name, picture, article) {
 	const h1 = document.createElement("h1");
 	h1.textContent = JSON.parse(name);
 	h1.setAttribute("tabindex", "0");
-	console.log("hh", h1.textContent);
 
 	// Récuperer le nom de photographe et l'afficher sur le modal
 	const photographerNameModal = document.querySelector(".modal-name-photographer");

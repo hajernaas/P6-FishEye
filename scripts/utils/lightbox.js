@@ -9,12 +9,12 @@ export default function showLightBox(mediasInfo) {
 	//Récupération des élements DOM
 	const lightboxContainer = document.querySelector(".lightbox-container");
 	const mediasListCard = [...document.querySelectorAll(".media-card")];
-	console.log("mediasListCard", mediasListCard);
 	const mediaLightbox = document.querySelector(".media-lightbox");
 	const previous_btn = document.querySelector(".controls-left");
 	const next_btn = document.querySelector(".controls-right");
 	const btnCloseLightbox = document.querySelector(".btn-close-lightbox");
 	const mainWrapper = document.getElementById("main");
+	const headerWrapper = document.querySelector(".header-photographer");
 
 	//Créer le template de lightbox
 	function showMediaLightbox() {
@@ -54,6 +54,7 @@ export default function showLightBox(mediasInfo) {
 	function closeLightbox() {
 		lightboxContainer.style.display = "none";
 		mainWrapper.setAttribute("aria-hidden", "false");
+		headerWrapper.setAttribute("aria-hidden", "false");
 		lightboxContainer.setAttribute("aria-hidden", "true");
 	}
 
@@ -71,6 +72,7 @@ export default function showLightBox(mediasInfo) {
 			showMediaLightbox();
 			//Masquer la page
 			mainWrapper.setAttribute("aria-hidden", "true");
+			headerWrapper.setAttribute("aria-hidden", "true");
 		});
 	});
 

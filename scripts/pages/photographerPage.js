@@ -4,23 +4,15 @@
 import { getPhotographersApiData } from "../api/Api.js";
 import { photographerTemplate } from "../templates/photographerTemplate.js";
 import MediasFactory from "../factories/MediasFactory.js";
-
 import Photographer from "../models/Photographer.js";
 import infoPhotographer from "../templates/infoPhotographer.js";
 import MediaTemplate from "../templates/MediaTemplate.js";
-
-import WhishListCounter from "../wishlist/Counter.js";
-import WishlistSubject from "../wishlist/Subject.js";
-import likes from "../utils/likes.js";
-
-import showLightBox from "../utils/lightbox.js";
 import SorterTemplate from "../templates/sorterTemplate.js";
 
 /*Retourner un objet params permettant d'accéder aux arguments décodés de la requête GET contenue dans l'URL pour 
 extraire le paramètre 'id' */
 const params = new URL(document.location).searchParams;
 const photographerId = parseInt(params.get("id"));
-console.log("fff", photographerId);
 
 /* cette fonction permet de Rechercher les informations d'un photographe (Media+identité) à partir des données JSON par son identifiant*/
 
@@ -42,24 +34,16 @@ export default async function getPhotographersById() {
 
 /* cette fonction permet d'afficher le contenu de la page photographe */
 async function displayDataMediaPhotographer(photographer, mediaList) {
-	const mediaSection = document.querySelector(".gallery");
+	//const mediaSection = document.querySelector(".gallery");
 	const { name, picture, getUserCardDOM } = photographerTemplate(photographer);
 
 	//Afficher l'dentité du photograohe
 	infoPhotographer(JSON.stringify(name), JSON.stringify(picture), getUserCardDOM());
 
-	//Parcourir le tableau de media et créer une carte pour chacun (image et video)
-	/*mediaList.forEach((media) => {
-		const mediaModel = new MediaTemplate(media, photographer);
-		console.log("sss", mediaModel.getMediaCardDOM());
-		mediaModel.getMediaCardDOM();
-		mediaSection.append(mediaModel.getMediaCardDOM());
-	});*/
-	console.log("tri par popularité");
+	//Afficher les media triés par popularité
 	const sorterBy = "popularity";
 	const sorterMedia = new SorterTemplate(mediaList, photographer);
 	sorterMedia.sorterMedias(sorterBy);
-	//sorterMedia.renderLightboxLikes(sorterBy);
 
 	// Afficher le tarif journalier de la photographe affiché et le nombre total de likes. */
 	const photographerLikePrice = new MediaTemplate(mediaList, photographer);

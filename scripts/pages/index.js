@@ -9,8 +9,6 @@ async function displayData(photographers) {
 	// Récupérer l'élément de photographer_section qui va contenir les cartes du photographe
 	const photographersSection = document.querySelector(".photographer_section");
 
-	// const photographers = photographersData.photographers;
-
 	//Parcourir le tableau des photographes et créer une carte pour chacun
 	photographers.forEach((photographer) => {
 		const photographerModel = photographerTemplate(photographer);
