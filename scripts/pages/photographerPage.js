@@ -33,8 +33,7 @@ export default async function getPhotographersById() {
 }
 
 /* cette fonction permet d'afficher le contenu de la page photographe */
-async function displayDataMediaPhotographer(photographer, mediaList) {
-	//const mediaSection = document.querySelector(".gallery");
+function displayDataMediaPhotographer(photographer, mediaList) {
 	const { name, picture, getUserCardDOM } = photographerTemplate(photographer);
 
 	//Afficher l'dentité du photograohe

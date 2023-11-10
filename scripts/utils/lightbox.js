@@ -61,6 +61,7 @@ export default function showLightBox(mediasInfo) {
 	// Déclencher un eventListener pour chaque photographie dans laquelle on peut défiler les autres photographies
 	mediasListCard.forEach((media) => {
 		media.addEventListener("click", () => {
+			//lire la valeur de l'attribut data avec l'objet dataset et repérer la propriété avec la partie du nom de l'attribut qui suit le préfixe data-
 			const media_Id = media.dataset.media;
 			//Trouver l'indice de l'élément courant
 			const currentMediaIndex = mediasList.findIndex((media) => media.id == media_Id);

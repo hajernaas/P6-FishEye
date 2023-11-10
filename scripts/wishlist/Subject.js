@@ -12,7 +12,7 @@ export default class WishlistSubject {
 	unsubscribe(observer) {
 		this._observers = this._observers.filter((obs) => obs !== observer);
 	}
-	// Il permet à des observateurs d'appliquer la méthode fire()
+	// Il permet à des observateurs d'appliquer la méthode fire() afin d’exécuter une action
 	fire(action) {
 		this._observers.forEach((observer) => observer.update(action));
 	}

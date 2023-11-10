@@ -13,6 +13,8 @@ export default class likes {
 		/*on utilise un Event Listener pour cliquer sur l’une des icônes de cœur de l’un des médias*/
 		allBtnLike.forEach((btn) => {
 			btn.addEventListener("click", () => {
+				//renvoie la valeur du premier élément trouvé qui respecte la condition donnée par la fonction de test.
+				//comparer la valeur de l'attribut data en utilisant l'objet dataset avec id du media
 				const media = mediasList.find((media) => media.id == btn.dataset.id);
 
 				// le cœur revient à son état initial et le compteur d’envies et le nombre total de likes diminue 1.

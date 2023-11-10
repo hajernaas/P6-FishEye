@@ -29,7 +29,6 @@ export default class SorterTemplate {
 		// Afficher les médias triés dans la section gallery
 		SortedMedias.forEach((media) => {
 			const TemplateMediaSorter = new MediaTemplate(media, this.photographer);
-			console.log("templateMedia", TemplateMediaSorter);
 			this.mediasWrapper.appendChild(TemplateMediaSorter.getMediaCardDOM());
 		});
 
@@ -74,7 +73,7 @@ export default class SorterTemplate {
 				
             </form>
         `;
-		// <option value="">Aucun tri</option>
+
 		this.wrapper.innerHTML = sorterForm;
 		//Appeler l'évenement change sur la liste déroulante
 		this.onChangeSorter();

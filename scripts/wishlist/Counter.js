@@ -1,4 +1,4 @@
-/* cette classe contient l'Observer qui souhaite etre informé de toutes les modifiations apporteés au sujet */
+/* cette classe contient l'Observer qui souhaite être informé de toutes les modifiations apporteés au sujet */
 
 export default class WhishListCounter {
 	constructor() {
@@ -29,7 +29,6 @@ export default class WhishListCounter {
 		});
 
 		this.count = totalMediaLikeCount;
-
 		this.wishCount.innerHTML = this.count;
 		return this.count;
 	}

@@ -46,15 +46,16 @@ Page de Photographe :
 ## Outils
 
 - [AChecker](https://achecker.ca/)- Évaluation de l'accessibilité du site Web.
-- [ESLint] - Utilisé (avec les paramètres par défaut) pour garantir que le code est robuste.
+- [ESLint] - Utilisé (avec les paramètres par défaut) pour garantir que le code est robuste.-
 - Utilisation de [Narrateur ] pour faire une idée de ce que représente  
   l'utilisation du site pour une personne malvoyante.
 - [W3C Validator](https://validator.w3.org/)
 
 ## Tester le projet
 
-Pour consulter directement le projet , veuillez voir ce lien :( https://hajernaas.github.io/P6-FishEye/)
-Sinon, clonez le projet
-git clone https://github.com/hajernaas/P6-FishEye.git
+- Pour consulter directement le projet , veuillez voir ce lien :( https://hajernaas.github.io/P6-FishEye/)
+  Sinon, clonez le projet
+  git clone https://github.com/hajernaas/P6-FishEye.git
 
-Ouvrez le projet avec live server.
+- Ouvrez le projet avec live server.
+- Testez eslint avec : npm run lint
